@@ -1,0 +1,5 @@
+in: header
+name: X-El-Parah-Hash
+type: string
+required: false
+description: An encrypted hash that authenticates the client
