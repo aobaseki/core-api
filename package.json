@@ -97,7 +97,7 @@
     "build": "npm run clean && babel src --ignore test/monitor --out-dir dist --source-maps",
     "start": "pm2-runtime start ecosystem.json5 --env $NODE_ENV",
     "local": "node_modules/.bin/pm2 startOrRestart ecosystem.json5 && node_modules/.bin/pm2 logs trips-api --lines=20",
-    "test": "mocha --exit --require @babel/register --require ./testHelper.js test/**/*test.js test/**/**/*test.js",
+    "test": "NODE_ENV=test PORT=3001 mocha --exit --require @babel/register --require ./testHelper.js test/**/*test.js test/**/**/*test.js",
     "stop": "node_modules/.bin/pm2 kill && node_modules/.bin/pm2 flush && node_modules/.bin/pm2 list",
     "restart-local": "npm stop && npm run local",
     "migrate": "knex migrate:latest",

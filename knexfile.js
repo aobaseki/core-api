@@ -1,12 +1,7 @@
 module.exports = {
   development: {
-    client: 'mysql',
-    connection:{
-      host:'127.0.0.1',
-      user:'root',
-      password:'',
-      database:'core_api_test'
-    },
+    client: 'pg',
+    connection: process.env.POSTGRESQLCONNSTR_DB || 'postgres://localhost/core_api_dev',
     migrations: {
       directory: `${__dirname}/db/migrations`,
     },
@@ -15,15 +10,8 @@ module.exports = {
     },
   },
   test: {
-    client: 'mysql',
-    // connection: process.env.POSTGRESQLCONNSTR_TEST_DB || 'postgres://localhost/core_api_test',
-    connection:{
-      host:'127.0.0.1',
-      user:'root',
-      password:'',
-      database:'core_api_test'
-    },
-
+    client: 'pg',
+    connection: process.env.POSTGRESQLCONNSTR_TEST_DB || 'postgres://localhost/core_api_test',
     migrations: {
       directory: `${__dirname}/db/migrations`,
     },
@@ -32,7 +20,7 @@ module.exports = {
     },
   },
   qa: {
-    client: 'mysql',
+    client: 'pg',
     connection: process.env.POSTGRESQLCONNSTR_DB,
     migrations: {
       directory: `${__dirname}/db/migrations`,

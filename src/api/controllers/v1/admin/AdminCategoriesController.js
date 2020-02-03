@@ -1,6 +1,6 @@
 import BaseController from '../../BaseController';
 
-class AdminCategoryController extends BaseController {
+class AdminCategoriesController extends BaseController {
   tableName() {
     return 'categories';
   }
@@ -10,7 +10,7 @@ class AdminCategoryController extends BaseController {
   }
 }
 
-const controller = new AdminCategoryController();
+const controller = new AdminCategoriesController();
 
 module.exports = {
   show: controller.show.bind(controller),
