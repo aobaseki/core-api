@@ -1,10 +1,10 @@
 #CLIENT paths
 
-#Companies CRUD
-/admin/companies:
-  $ref: ./v1/client/companies/index.yaml
-/admin/companies/{company_id}:
-  $ref: ./v1/client/companies/rud.yaml
+#categories CRUD
+/admin/categories:
+  $ref: ./v1/client/categories/index.yaml
+/admin/categories/{category_id}:
+  $ref: ./v1/client/categories/rud.yaml
 
 
 

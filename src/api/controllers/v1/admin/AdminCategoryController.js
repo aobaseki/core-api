@@ -1,16 +1,16 @@
 import BaseController from '../../BaseController';
 
-class ClientCompaniesController extends BaseController {
+class AdminCategoryController extends BaseController {
   tableName() {
-    return 'companies';
+    return 'categories';
   }
 
   _identifierValue(swagger) {
-    return swagger.params.company_id.value;
+    return swagger.params.category_id.value;
   }
 }
 
-const controller = new ClientCompaniesController();
+const controller = new AdminCategoryController();
 
 module.exports = {
   show: controller.show.bind(controller),

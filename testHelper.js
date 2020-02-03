@@ -20,12 +20,12 @@ function removeTimestamps(params) {
 }
 
 const resources = {
-  companies: 'companies',
+  categories: 'categories',
 };
 
 const apiPaths = {
   v1: {
-    clientBasePath: '/v1/admin',
+    adminBasePath: '/v1/admin',
   },
 };
 

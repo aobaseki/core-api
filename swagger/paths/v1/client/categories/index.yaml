@@ -1,8 +1,8 @@
-x-swagger-router-controller: ClientCompaniesController
+x-swagger-router-controller: AdminCategoriesController
 get:
-  description: Lists companies
+  description: Lists Categories
   operationId: index
-  x-resource: ccompanies
+  x-resource: Categories
   x-permission: read
   tags:
   - $ref: ../../../../tags/client.yaml
@@ -15,7 +15,7 @@ get:
     "200":
       description: Success
       schema:
-        $ref: "../../../../swagger_v1.yaml#/definitions/Company"
+        $ref: "../../../../swagger_v1.yaml#/definitions/Category"
     default:
       description: Error
       schema:
@@ -23,23 +23,23 @@ get:
   security: [ { clientAuth: [] } ]
 
 post:
-  description: Creates a Company
+  description: Creates a Category
   operationId: create
-  x-resource: companies
+  x-resource: Categories
   x-permission: create
   tags:
   - $ref: ../../../../tags/client.yaml
   parameters:
   - $ref: "../../../../swagger_v1.yaml#/parameters/Authorization"
   - in: body
-    name: Company
+    name: Category
     schema:
-      $ref: "../../../../swagger_v1.yaml#/definitions/Company"
+      $ref: "../../../../swagger_v1.yaml#/definitions/Category"
   responses:
     "200":
       description: Success
       schema:
-        $ref: "../../../../swagger_v1.yaml#/definitions/Company"
+        $ref: "../../../../swagger_v1.yaml#/definitions/Category"
     default:
       description: Error
       schema:

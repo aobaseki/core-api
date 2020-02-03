@@ -10,8 +10,8 @@ const appEmitter = new AppEmitter();
 
 global.getEnv = () => {
   if (process.env.NODE_ENV) {
-    return process.env.NODE_ENV;
-  }
+     return process.env.NODE_ENV;
+   }
 
   return 'development';
 };

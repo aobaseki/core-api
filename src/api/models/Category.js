@@ -1,8 +1,8 @@
 import BaseModel from './BaseModel';
 
-export default class Company extends BaseModel {
+export default class Category extends BaseModel {
 	static get tableName() {
-		return 'companies';
+		return 'categories';
 	}
 
 	static get primaryKeyName() {
@@ -10,7 +10,7 @@ export default class Company extends BaseModel {
 	}
 
 	static get fieldNames() {
-		return ['id', 'name', 'logo'];
+		return ['id', 'name'];
 	}
 
   static get softDelete() {

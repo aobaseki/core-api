@@ -112,7 +112,7 @@ async function start() {
     },
   };
 
-  const controllerDirs = ['api/controllers/v1/client'];
+  const controllerDirs = ['api/controllers/v1/admin'];
 
   const swaggerConfig = Object.assign(
     {

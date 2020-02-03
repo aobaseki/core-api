@@ -4,7 +4,7 @@ required:
   - count
   - totalCount
   - totalPages
-  - companies
+  - category
   - links
 
 properties:
@@ -18,7 +18,7 @@ properties:
     $ref: "../common/totalPages.yaml"
   links:
     $ref: "../common/links.yaml"
-  companies:
+  categories:
     type: array
     items:
       $ref: "../../swagger_v1.yaml#/definitions/Company"

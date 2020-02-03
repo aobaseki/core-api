@@ -25,8 +25,8 @@ parameters:
     $ref: ./params/x-el-parah-timestamp.yaml
   X-El-Parah-Client:
     $ref: ./params/x-el-parah-client.yaml
-  CompanyId:
-    $ref: ./params/company_id.yaml
+  CategoryId:
+    $ref: ./params/category_id.yaml
   Search:
     $ref: ./params/search.yaml
   Sort:
@@ -41,8 +41,8 @@ parameters:
     $ref: ./params/authorization.yaml
 
 definitions:
-  Company:
-    $ref: ./defs/companies/company.yaml
+  Category:
+    $ref: ./defs/categories/category.yaml
 
 
 securityDefinitions:

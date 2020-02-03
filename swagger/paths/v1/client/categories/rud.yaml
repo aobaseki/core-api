@@ -1,19 +1,19 @@
-x-swagger-router-controller: ClientCompaniesController
+x-swagger-router-controller: AdmincategoriesController
 get:
-  description: Shows a Company
+  description: Shows a Category
   operationId: show
-  x-resource: companies
+  x-resource: categories
   x-permission: read
   tags:
   - $ref: ../../../../tags/client.yaml
   parameters:
     - $ref: "../../../../swagger_v1.yaml#/parameters/Authorization"
-    - $ref: "../../../../swagger_v1.yaml#/parameters/CompanyId"
+    - $ref: "../../../../swagger_v1.yaml#/parameters/CategoryId"
   responses:
     "200":
       description: Success
       schema:
-        $ref: "../../../../swagger_v1.yaml#/definitions/Company"
+        $ref: "../../../../swagger_v1.yaml#/definitions/Category"
     default:
       description: Error
       schema:
@@ -21,7 +21,7 @@ get:
   security: [ { clientAuth: [] } ]
 
 put:
-  description: Updates a Company
+  description: Updates a Category
   operationId: update
   x-resource: companiies
   x-permission: update
@@ -29,16 +29,16 @@ put:
   - $ref: ../../../../tags/client.yaml
   parameters:
     - $ref: "../../../../swagger_v1.yaml#/parameters/Authorization"
-    - $ref: "../../../../swagger_v1.yaml#/parameters/CompanyId"
+    - $ref: "../../../../swagger_v1.yaml#/parameters/CategoryId"
     - in: body
-      name: Company
+      name: Category
       schema:
-        $ref: "../../../../swagger_v1.yaml#/definitions/Company"
+        $ref: "../../../../swagger_v1.yaml#/definitions/Category"
   responses:
     "200":
       description: Success
       schema:
-        $ref: "../../../../swagger_v1.yaml#/definitions/Company"
+        $ref: "../../../../swagger_v1.yaml#/definitions/Category"
     default:
       description: Error
       schema:
@@ -46,15 +46,15 @@ put:
   security: [ { clientAuth: [] } ]
 
 delete:
-  description: Destroys a Company
+  description: Destroys a Category
   operationId: destroy
-  x-resource: companies
+  x-resource: categories
   x-permission: delete
   tags:
   - $ref: ../../../../tags/client.yaml
   parameters:
     - $ref: "../../../../swagger_v1.yaml#/parameters/Authorization"
-    - $ref: "../../../../swagger_v1.yaml#/parameters/CompanyId"
+    - $ref: "../../../../swagger_v1.yaml#/parameters/CategoryId"
   responses:
     "200":
       description: Success

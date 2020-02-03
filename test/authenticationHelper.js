@@ -18,7 +18,7 @@ const initialUserDetails = {
   },
 };
 
-function clientSignedHeaders(userDetails) {
+function adminSignedHeaders(userDetails) {
   return {
     Authorization: `Bearer ${jwt.sign(userDetails, jwtSecret)}`,
   };
@@ -26,5 +26,5 @@ function clientSignedHeaders(userDetails) {
 
 module.exports = {
   initialUserDetails,
-  clientSignedHeaders,
+  adminSignedHeaders,
 };

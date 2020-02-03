@@ -3,13 +3,13 @@ import csvStringify from 'csv-stringify';
 import camelize from 'camelize';
 import SimpleRelationService from '../services/SimpleRelationService';
 import UrlBuilder from '../helpers/UrlBuilder';
-import Company from '../models/Company';
+import Category from '../models/Category';
 import UserHelper from '../helpers/UserHelper';
 
 export default class BaseController {
   static get models() {
     return {
-      companies: Company,
+      categories: Category,
     };
   }
 
