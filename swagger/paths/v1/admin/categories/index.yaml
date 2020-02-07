@@ -1,0 +1,47 @@
+x-swagger-router-controller: AdminCategoriesController
+get:
+  description: Lists Categories
+  operationId: index
+  x-resource: Categories
+  x-permission: read
+  tags:
+  - $ref: ../../../../tags/client.yaml
+  parameters:
+    - $ref: "../../../../swagger_v1.yaml#/parameters/Authorization"
+    - $ref: "../../../../swagger_v1.yaml#/parameters/Offset"
+    - $ref: "../../../../swagger_v1.yaml#/parameters/Limit"
+    - $ref: "../../../../swagger_v1.yaml#/parameters/Sort"
+  responses:
+    "200":
+      description: Success
+      schema:
+        $ref: "../../../../swagger_v1.yaml#/definitions/Category"
+    default:
+      description: Error
+      schema:
+        $ref: ../../../../responses/error.yaml
+  security: [ { clientAuth: [] } ]
+
+post:
+  description: Creates a Category
+  operationId: create
+  x-resource: Categories
+  x-permission: create
+  tags:
+  - $ref: ../../../../tags/client.yaml
+  parameters:
+  - $ref: "../../../../swagger_v1.yaml#/parameters/Authorization"
+  - in: body
+    name: Category
+    schema:
+      $ref: "../../../../swagger_v1.yaml#/definitions/Category"
+  responses:
+    "200":
+      description: Success
+      schema:
+        $ref: "../../../../swagger_v1.yaml#/definitions/Category"
+    default:
+      description: Error
+      schema:
+        $ref: ../../../../responses/error.yaml
+  security: [ { clientAuth: [] } ]

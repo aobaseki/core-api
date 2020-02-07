@@ -1,0 +1,65 @@
+x-swagger-router-controller: AdminCategoriesController
+get:
+  description: Shows a Category
+  operationId: show
+  x-resource: categories
+  x-permission: read
+  tags:
+  - $ref: ../../../../tags/client.yaml
+  parameters:
+    - $ref: "../../../../swagger_v1.yaml#/parameters/Authorization"
+    - $ref: "../../../../swagger_v1.yaml#/parameters/CategoryId"
+  responses:
+    "200":
+      description: Success
+      schema:
+        $ref: "../../../../swagger_v1.yaml#/definitions/Category"
+    default:
+      description: Error
+      schema:
+        $ref: ../../../../responses/error.yaml
+  security: [ { clientAuth: [] } ]
+
+put:
+  description: Updates a Category
+  operationId: update
+  x-resource: companiies
+  x-permission: update
+  tags:
+  - $ref: ../../../../tags/client.yaml
+  parameters:
+    - $ref: "../../../../swagger_v1.yaml#/parameters/Authorization"
+    - $ref: "../../../../swagger_v1.yaml#/parameters/CategoryId"
+    - in: body
+      name: Category
+      schema:
+        $ref: "../../../../swagger_v1.yaml#/definitions/Category"
+  responses:
+    "200":
+      description: Success
+      schema:
+        $ref: "../../../../swagger_v1.yaml#/definitions/Category"
+    default:
+      description: Error
+      schema:
+        $ref: ../../../../responses/error.yaml
+  security: [ { clientAuth: [] } ]
+
+delete:
+  description: Destroys a Category
+  operationId: destroy
+  x-resource: categories
+  x-permission: delete
+  tags:
+  - $ref: ../../../../tags/client.yaml
+  parameters:
+    - $ref: "../../../../swagger_v1.yaml#/parameters/Authorization"
+    - $ref: "../../../../swagger_v1.yaml#/parameters/CategoryId"
+  responses:
+    "200":
+      description: Success
+    default:
+      description: Error
+      schema:
+        $ref: ../../../../responses/error.yaml
+  security: [ { clientAuth: [] } ]

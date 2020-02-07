@@ -1,0 +1,62 @@
+swagger: "2.0"
+info:
+  version: "1.0.0"
+  title: El-Parah Core-API
+host: localhost:3030
+basePath: /v1
+
+schemes:
+  - http
+  - https
+consumes:
+  - application/json
+produces:
+  - application/json
+
+paths:
+  $ref: ./paths/v1.yaml
+  /swagger:
+    x-swagger-pipe: swagger_raw
+
+parameters:
+  X-El-Parah-Hash:
+    $ref: ./params/x-el-parah-hash.yaml
+  X-El-Parah-Timestamp:
+    $ref: ./params/x-el-parah-timestamp.yaml
+  X-El-Parah-Client:
+    $ref: ./params/x-el-parah-client.yaml
+  CategoryId:
+    $ref: ./params/category_id.yaml
+  ManufacturerId:
+    $ref: ./params/manufacturer_id.yaml
+  BrandId:
+    $ref: ./params/brand_id.yaml
+  Search:
+    $ref: ./params/search.yaml
+  Sort:
+    $ref: ./params/sort.yaml
+  Offset:
+    $ref: ./params/offset.yaml
+  Limit:
+    $ref: ./params/limit.yaml
+  No-Limit:
+    $ref: ./params/no_limit.yaml
+  Authorization:
+    $ref: ./params/authorization.yaml
+
+definitions:
+  Category:
+    $ref: ./defs/categories/category.yaml
+  Manufacturer:
+    $ref: ./defs/manufacturers/manufacturer.yaml
+
+
+securityDefinitions:
+  elparahKey:
+    type: apiKey
+    in: header
+    name: X-El-Parah-Hash
+  clientAuth:
+    type: apiKey
+    in: header
+    name: Authorization

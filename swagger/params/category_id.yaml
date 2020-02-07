@@ -1,0 +1,5 @@
+in: path
+name: category_id
+description: Category ID
+required: true
+type: integer

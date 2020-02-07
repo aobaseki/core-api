@@ -1,0 +1,10 @@
+#CLIENT paths
+
+#categories CRUD
+/admin/categories:
+  $ref: ./v1/admin/categories/index.yaml
+/admin/categories/{category_id}:
+  $ref: ./v1/admin/categories/rud.yaml
+
+
+
