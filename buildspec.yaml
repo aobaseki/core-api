@@ -14,7 +14,7 @@ phases:
     commands:
       - echo Build started on `date`
       - echo Compiling the Node.js code
-      
+
   post_build:
     commands:
       # build into dist folder
@@ -24,7 +24,9 @@ phases:
       - rm -r node_modules
 
       # Install runtime dependencies
-      - npm ci --production
+      - npm install --production
+
+      - echo Build completed on `date`
 artifacts:
   type: zip
   files:
