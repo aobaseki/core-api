@@ -1,0 +1,5 @@
+in: path
+name: brand_id
+description: Brand ID
+required: true
+type: integer

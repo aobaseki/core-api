@@ -1,0 +1,47 @@
+x-swagger-router-controller: ClientBrandsController
+get:
+  description: Lists brands
+  operationId: index
+  x-resource: brands
+  x-permission: read
+  tags:
+  - $ref: ../../../../tags/client.yaml
+  parameters:
+    - $ref: "../../../../swagger_v1.yaml#/parameters/Authorization"
+    - $ref: "../../../../swagger_v1.yaml#/parameters/Offset"
+    - $ref: "../../../../swagger_v1.yaml#/parameters/Limit"
+    - $ref: "../../../../swagger_v1.yaml#/parameters/Sort"
+  responses:
+    "200":
+      description: Success
+      schema:
+        $ref: "../../../../swagger_v1.yaml#/definitions/Brand"
+    default:
+      description: Error
+      schema:
+        $ref: ../../../../responses/error.yaml
+  security: [ { clientAuth: [] } ]
+
+post:
+  description: Creates a Brand
+  operationId: create
+  x-resource: brands
+  x-permission: create
+  tags:
+  - $ref: ../../../../tags/client.yaml
+  parameters:
+  - $ref: "../../../../swagger_v1.yaml#/parameters/Authorization"
+  - in: body
+    name: Brand
+    schema:
+      $ref: "../../../../swagger_v1.yaml#/definitions/Brand"
+  responses:
+    "200":
+      description: Success
+      schema:
+        $ref: "../../../../swagger_v1.yaml#/definitions/Brand"
+    default:
+      description: Error
+      schema:
+        $ref: ../../../../responses/error.yaml
+  security: [ { clientAuth: [] } ]

@@ -27,6 +27,8 @@ parameters:
     $ref: ./params/x-el-parah-client.yaml
   CompanyId:
     $ref: ./params/company_id.yaml
+  BrandId:
+    $ref: ./params/brand_id.yaml
   Search:
     $ref: ./params/search.yaml
   Sort:
@@ -43,6 +45,8 @@ parameters:
 definitions:
   Company:
     $ref: ./defs/companies/company.yaml
+  Brand:
+    $ref: ./defs/brands/brand.yaml
 
 
 securityDefinitions:

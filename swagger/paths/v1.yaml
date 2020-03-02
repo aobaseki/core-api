@@ -6,5 +6,10 @@
 /admin/companies/{company_id}:
   $ref: ./v1/client/companies/rud.yaml
 
+#Brands CRUD
+/admin/brands:
+  $ref: ./v1/client/brands/index.yaml
+/admin/brands/{brand_id}:
+  $ref: ./v1/client/brands/rud.yaml
 
 
